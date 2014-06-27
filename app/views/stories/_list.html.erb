@@ -1,0 +1,8 @@
+<% @story.each do |story| %>
+<dl>
+	<dt><b> <%= link_to story.title, story_path(story.id) %> </b></dt>
+	<dd> <%= story.link %> </dd>
+	<dd> <%= story.upvotes %> </dd>
+	<dd> <%= story.category %> </dd>
+	</dl>
+	<% end %>

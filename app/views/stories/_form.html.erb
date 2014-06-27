@@ -1,0 +1,31 @@
+<% if @story.errors.any? %>
+<h2> There was an error saving your story </h2>
+<ul> 
+	<% @story.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+	<% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @story do |f| %>
+	<fieldset>
+		<div class='fields'>
+			<%=f.label :title %>
+			<%= f.text_field :title %>
+		</div>
+		<div class='fields'>
+			<%=f.label :link %>
+			<%= f.text_field :link %>
+		</div>
+		<div class='fields'>
+			<%=f.label :upvotes %>
+			<%= f.text_field :upvotes %>
+		</div>
+		<div class='fields'>
+			<%=f.label :category %>
+			<%= f.text_field :category %>
+		</div>
+	</fieldset>
+	<%=f.submit %>
+<% end %>
